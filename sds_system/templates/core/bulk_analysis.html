@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    #submit_button {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    </style>
+    <h1>Count Range Filter</h1>
+    <form method="get">
+        <label for="min">Min Bound</label>
+        <input name="min" type="number"/>
+        <label for="max">Max Bound</label>
+        <input name="max" type="number"/>
+        <input type="submit"/>
+    </form>
+    <h1>Domain Counts</h1>
+    {{ analysis|safe }}
+
+{% endblock %}
